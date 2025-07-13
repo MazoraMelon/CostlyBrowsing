@@ -11,7 +11,7 @@ if (button) {
     button.addEventListener('click', function () {
         if (domainName) {
             getCoinCount().then(count => {
-                if (parseInt(count, 10) > 0) {
+                if (parseInt(count, 10) > 20) { // Ensure user has more than 20 coins
                     chrome.runtime.sendMessage({
                         action: 'purchaseDomainAccess',
                         domain: domainName
@@ -34,6 +34,14 @@ if (button) {
         } else {
             console.error('No domain name provided.');
         }
+    });
+}
+
+const earnMoreCoinsButton = document.getElementById('earnMoreCoinsButton');
+if (earnMoreCoinsButton) {
+    earnMoreCoinsButton.addEventListener('click', function () {
+        // Redirect to the page where users can earn more coins
+        window.open('EarnCoins.html', '_blank');
     });
 }
 
