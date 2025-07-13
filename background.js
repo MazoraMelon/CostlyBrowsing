@@ -1,8 +1,5 @@
-let allowedDomainsDefault = [
-    "google.com",
-    "chatgpt.com",
-    "developer.chrome.com"
-];
+let allowedDomainsDefault = [];
+
 
 
 async function getAllowedDomains() {
@@ -11,7 +8,13 @@ async function getAllowedDomains() {
             if (chrome.runtime.lastError) {
                 reject(chrome.runtime.lastError);
             } else {
-                resolve(result.allowedDomains || []);
+                // If not set, initialize with allowedDomainsDefault
+                if (result.allowedDomains === undefined) {
+                    chrome.storage.local.set({allowedDomains: allowedDomainsDefault});
+                    resolve(allowedDomainsDefault);
+                } else {
+                    resolve(result.allowedDomains);
+                }
             }
         });
     });
@@ -49,7 +52,16 @@ function getCoins() {
             if (chrome.runtime.lastError) {
                 reject(chrome.runtime.lastError);
             } else {
-                resolve(result.coins || 0);
+                // If not set, initialize with coinsDefault
+                if (result.coins === undefined) {
+                    chrome.storage.local.set({coins: 100}, () => {
+                        resolve(100);
+                    });
+                    console.log(`Coins not set, initializing with default: 100`);
+                    resolve(100);
+                } else {
+                    resolve(result.coins);
+                }
             }
         });
     });
