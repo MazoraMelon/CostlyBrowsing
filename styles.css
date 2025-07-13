@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+body {
+    background-color: #1f1f1f;
+    color: white;
+    font-family: "Silkscreen", serif;
+    font-weight: 400;
+    overflow: hidden;
+}
+
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-clip: border-box;
+    overflow: hidden;
+    background-position: center;
+    z-index: -1; /* Ensure the background is behind other content */
+}
+svg {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    object-fit: cover;
+}
+
+#coins {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(111, 80, 223, 0.5);
+    border: 2px solid rgb(0, 250, 154);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 2rem;
+}
+
+#coins span {
+    color: rgb(0, 250, 154);
+    font-weight: bold;
+    margin: 0;
+}
+
+#coins img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    image-rendering: pixelated;
+}
+
+#domainPreview {
+    background-color: rgba(111, 80, 223, 0.5);
+    border: 2px solid rgba(111, 80, 223, 0.5);
+    max-width: 50%;
+    width: fit-content;
+    padding: 10px 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius: 30px 30px 10px 10px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+#lockDiv {
+    background-color: rgba(111, 80, 223, 0.25);
+    border: 2px solid rgba(111, 80, 223, 0.5);
+    border-radius: 10px 10px 30px 30px;
+    padding: 60px 20px;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align: center;
+    font-family: "Silkscreen", serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.redText {
+    color: red;
+}
+
+.title {
+    font-size: 60px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+
+.coinContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 0;
+    width: fit-content;
+}
+
+.coinImage {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    image-rendering: pixelated;
+}
+
+.buttonSubtext {
+    font-size: 1.2rem;
+    color: white;
+    margin-top: 10px;
+}
+
+#unlockButton {
+    background-color: #1f1f1f;
+    border: 2px solid rgba(183, 163, 255, 0.5);
+    border-radius: 10px;
+    padding: 10px;;
+    font-family: Silkscreen, Serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 40%;
+    transition: all .1s ease-in-out;
+}
+
+#unlockButton:hover {
+    background-color: rgba(111, 80, 223, 0.5);
+    border-color: rgba(183, 163, 255, 0.75);
+    width: 50%;
+    border-radius: 50px;
+}
+
+#unlockButton:active {
+    background-color: rgba(111, 80, 223, 0.75);
+    border-color: rgb(255, 255, 255);
+    width: 30%;
+    border-radius: 200px;
+    scale: 0.9;
+    transition: all .02s ease-in-out;
+}
+
+.buttonText {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #b990ff;
+}
+
+
+.catImage {
+    width: 300px;
+    border-radius: 20px;
+}
+
+#catImageContainer {
+    display: flex;
+    margin-top: 20px;
+    background-color: rgba(111, 80, 223, 0.5);
+    border: 2px solid rgba(111, 80, 223, 0.5);
+    border-radius: 10px;
+    width: fit-content;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: wobble 5s infinite;
+}
+
+@keyframes wobble {
+    0% { transform: rotate(0deg) scale(1); }
+    20% { transform: rotate(-2deg) scale(1.02); }
+    50% { transform: rotate(2deg) scale(0.98); }
+    80% { transform: rotate(-2deg) scale(1.02); }
+    100% { transform: rotate(0deg) scale(1); }
+}
+
+#addCoin {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    /*     Control Position in EarnCoins.js*/
+}
+
+.centredHeader {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 20px;
+    color: white;
+}
+
+
+.earnButton {
+    background-color: rgba(111, 80, 223, 0.5);
+    border: 2px solid rgba(111, 80, 223, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+    font-family: Silkscreen, Serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: fit-content;
+    transition: all .1s ease-in-out;
+    color: white;
+}
+
+.earnButton:hover {
+    background-color: rgba(111, 80, 223, 0.75);
+    border-color: rgba(183, 163, 255, 0.75);
+    width: fit-content;
+    border-radius: 50px;
+}
+
+.earnButton:active {
+    background-color: rgba(111, 80, 223, 0.75);
+    border-color: rgb(255, 255, 255);
+    width: fit-content;
+    border-radius: 200px;
+    scale: 0.7;
+    transition: all .02s ease-in-out;
+}
+
+.greenText {
+    color: #00fa9a;
+}
+
+#earnMoreCoinsButton {
+    background-color: rgba(80, 223, 147, 0.5);
+    border: 2px solid rgba(80, 223, 147, 0.5);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+#earnMoreCoinsButton:hover {
+    background-color: rgba(80, 223, 147, 0.75);
+    border-color: rgba(129, 234, 177, 0.75);
+}
